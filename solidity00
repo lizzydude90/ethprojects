@@ -1,0 +1,17 @@
+pragma solidity ^0.4.17; //specifies the version of solidity inside the file
+
+contract Inbox { //defines a new class 
+    string public message; //defines a new storage/instance variable called message of type string, public because it's accessible to public
+    
+    function Inbox(string initialMessage) public { //constructor function, invoked automatically when contract is deployed
+        message = initialMessage; 
+    }
+    
+    function setMessage(string newMessage) public {
+        message = newMessage; 
+    }
+    
+    function getMessage() public view returns (string) { //returns specifies type of return value that we expect to see, can only be used on functions that are view or constant
+        return message; // can be deleted because parent variable automatically creates a function 
+    }
+}
